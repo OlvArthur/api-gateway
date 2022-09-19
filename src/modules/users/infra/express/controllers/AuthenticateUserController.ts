@@ -8,10 +8,10 @@ class AuthenticateUserController {
   public async execute(request: Request, response: Response) {
     const { email } = request.body
 
-    const token = await this.authenticateUserService.execute(email)
+    const { token, user } = await this.authenticateUserService.execute(email)
 
     
-    return response.json({ token })
+    return response.json({ token, user })
   }
 }
 

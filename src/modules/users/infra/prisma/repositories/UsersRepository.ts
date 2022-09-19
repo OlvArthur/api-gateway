@@ -2,6 +2,7 @@ import { IFindOneUserRepository, IUser } from "../../../repositories/IFindOneUse
 
 class UsersRepository implements IFindOneUserRepository {
   private users: IUser[] = [{
+    id: 1,
     email:'arthur.oliveira@gateway.br',
     password: '12345'
   }]
