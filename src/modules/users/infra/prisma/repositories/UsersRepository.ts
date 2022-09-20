@@ -1,4 +1,4 @@
-import { IFindOneUserRepository, IUser } from "../../../repositories/IFindOneUserRepositoty";
+import { IFindOneUserRepository, IUser } from "@modules/users/repositories/IFindOneUserRepository"
 
 class UsersRepository implements IFindOneUserRepository {
   private users: IUser[] = [{

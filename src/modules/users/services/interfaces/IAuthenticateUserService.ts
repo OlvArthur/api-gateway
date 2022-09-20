@@ -1,5 +1,6 @@
-import { IUser } from "../../repositories/IFindOneUserRepositoty";
+import { IUser } from "@modules/users/repositories/IFindOneUserRepository";
 
-export default interface IAuthenticaUserService {
+
+export interface IAuthenticateUserService {
   execute(email: string): Promise<{ user: IUser, token: string }>
 }

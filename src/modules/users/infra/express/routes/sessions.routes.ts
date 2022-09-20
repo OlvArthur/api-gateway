@@ -1,13 +1,13 @@
 import { Router } from 'express'
 
-import AuthenticateUserService from '../../../services/AuthenticateUserService'
-import UsersRepository from '../../prisma/repositories/UsersRepository'
-import AuthenticateUserController from '../controllers/AuthenticateUserController'
-import JWTTokenProvider from '../../../providers/AuthTokenProvider/implementations/JWTTokenProvider'
+import AuthenticateUserService from '@modules/users/services/AuthenticateUserService'
+import UsersRepository from '@modules/users/infra/prisma/repositories/UsersRepository'
+import AuthenticateUserController from '@modules/users/infra/express/controllers/AuthenticateUserController'
+import JWTTokenProvider from '@modules/users/providers/AuthTokenProvider/implementations/JWTTokenProvider'
 
-import authMiddleware from '../middlewares/ValidateUserAuthMiddleware'
+import authMiddleware from '@modules/users/infra/express/middlewares/ValidateUserAuthMiddleware'
 
-const sessionRouter = Router()
+export const sessionRouter = Router()
 
 const usersRepository = new UsersRepository()
 const tokenProvider = new JWTTokenProvider()
@@ -17,4 +17,3 @@ const authenticateUserController = new AuthenticateUserController(authenticateUs
 sessionRouter.post('/', (request, response) => authenticateUserController.execute(request, response))
 sessionRouter.get('/', authMiddleware, (_, response) => response.json({ message: 'token valid' }))
 
-export default sessionRouter

@@ -1,6 +1,6 @@
 import { Request, Response } from 'express'
 
-import IAuthenticateUserService from '../../../services/interfaces/IAuthenticateUserService'
+import { IAuthenticateUserService } from '@modules/users/services/interfaces/IAuthenticateUserService'
 
 class AuthenticateUserController {
   constructor(private authenticateUserService: IAuthenticateUserService){}

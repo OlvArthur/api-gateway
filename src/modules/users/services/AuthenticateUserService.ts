@@ -1,8 +1,10 @@
-import ITokenProvider from "../providers/AuthTokenProvider/models/ITokenProvider";
-import { IFindOneUserRepository } from "../repositories/IFindOneUserRepositoty";
-import IAuthenticaUserService from "./interfaces/IAuthenticateUserService";
+import { ITokenProvider } from "@modules/users/providers/AuthTokenProvider/models/ITokenProvider"
+import { IFindOneUserRepository } from "@modules/users/repositories/IFindOneUserRepository"
+import { IAuthenticateUserService } from "@modules/users/services/interfaces/IAuthenticateUserService"
 
-class AuthenticateUserService implements IAuthenticaUserService {
+
+
+class AuthenticateUserService implements IAuthenticateUserService {
   constructor(private usersRepository: IFindOneUserRepository, private authTokenProvider: ITokenProvider) {}
   
   public async execute(email: string) {

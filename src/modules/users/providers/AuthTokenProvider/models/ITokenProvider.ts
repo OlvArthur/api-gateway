@@ -1,3 +1,3 @@
-export default interface ITokenProvider {
+export interface ITokenProvider {
   generateToken(payload: string): string
 }

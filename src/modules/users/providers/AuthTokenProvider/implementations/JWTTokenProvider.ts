@@ -1,7 +1,7 @@
 import { sign } from 'jsonwebtoken'
 
-import ITokenProvider from "../models/ITokenProvider";
-import authConfig from '../../../../../config/auth'
+import { ITokenProvider } from '@modules/users/providers/AuthTokenProvider/models/ITokenProvider'
+import authConfig from '@config/auth'
 
 
 export default class JWTTokenProvider implements ITokenProvider{
