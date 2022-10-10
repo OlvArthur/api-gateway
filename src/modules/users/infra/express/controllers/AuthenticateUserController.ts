@@ -1,17 +1,17 @@
-import { Request, Response } from 'express'
-
 import { IAuthenticateUserService } from '@modules/users/services/interfaces/IAuthenticateUserService'
+import { BaseController } from '@shared/controller'
+import { success } from '@shared/commons'
+import { HttpRequest } from '@shared/interfaces'
 
-class AuthenticateUserController {
+class AuthenticateUserController implements BaseController {
   constructor(private authenticateUserService: IAuthenticateUserService){}
 
-  public async execute(request: Request, response: Response) {
-    const { email } = request.body
+  async handle(httpRequest: HttpRequest) {
+    const { email } = httpRequest.body
 
     const { token, user } = await this.authenticateUserService.execute(email)
 
-    
-    return response.json({ token, user })
+    return success({ token,user })
   }
 }
 
