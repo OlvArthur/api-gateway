@@ -5,5 +5,5 @@ export interface IUser {
 }
 
 export interface IFindOneUserRepository {
-  findByEmail(email: string): Promise<IUser | undefined> 
+  findByEmail(email: string): Promise<IUser | undefined>
 }
