@@ -153,6 +153,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@prisma/engines@npm:4.4.0":
+  version: 4.4.0
+  resolution: "@prisma/engines@npm:4.4.0"
+  checksum: e5a62e6c905cbe325f8aa15afe698f8a0a47fe7fdc4d4affdc8df86fcdc6fdd2857ac498611217daf5f8304846a32e199d100165c748b4e8a959bbf0670507a1
+  languageName: node
+  linkType: hard
+
 "@tootallnate/once@npm:2":
   version: 2.0.0
   resolution: "@tootallnate/once@npm:2.0.0"
@@ -555,6 +562,7 @@ __metadata:
     jsonwebtoken: ^8.5.1
     nodemon: ^2.0.19
     prettier: ^2.7.1
+    prisma: ^4.4.0
     ts-node: ^10.9.1
     ts-node-dev: ^2.0.0
     tsconfig-paths: ^4.1.0
@@ -2986,6 +2994,18 @@ __metadata:
   bin:
     prettier: bin-prettier.js
   checksum: 55a4409182260866ab31284d929b3cb961e5fdb91fe0d2e099dac92eaecec890f36e524b4c19e6ceae839c99c6d7195817579cdffc8e2c80da0cb794463a748b
+  languageName: node
+  linkType: hard
+
+"prisma@npm:^4.4.0":
+  version: 4.4.0
+  resolution: "prisma@npm:4.4.0"
+  dependencies:
+    "@prisma/engines": 4.4.0
+  bin:
+    prisma: build/index.js
+    prisma2: build/index.js
+  checksum: fb44f8b36d59c411711b2f5cecbe112a6487c387a7dd7ade350c73c0e9f821dfdb30cd6271c2f2b9b713fda3a31eec4b241c482754b26bfcb6df831ba521a58e
   languageName: node
   linkType: hard
 

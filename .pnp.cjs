@@ -46,6 +46,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jsonwebtoken", "npm:8.5.1"],\
             ["nodemon", "npm:2.0.20"],\
             ["prettier", "npm:2.7.1"],\
+            ["prisma", "npm:4.4.0"],\
             ["ts-node", "virtual:142c23a86e7d1f8f21c16e78639c496707a0b5b621a5fb010d8b77b3d8f05f6a78570ba9485236bc07c64057189c2b6821352adf780ae137ddd2183db0ebf7bd#npm:10.9.1"],\
             ["ts-node-dev", "virtual:142c23a86e7d1f8f21c16e78639c496707a0b5b621a5fb010d8b77b3d8f05f6a78570ba9485236bc07c64057189c2b6821352adf780ae137ddd2183db0ebf7bd#npm:2.0.0"],\
             ["tsconfig-paths", "npm:4.1.0"],\
@@ -220,6 +221,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@npmcli/move-file", "npm:2.0.1"],\
             ["mkdirp", "npm:1.0.4"],\
             ["rimraf", "npm:3.0.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@prisma/engines", [\
+        ["npm:4.4.0", {\
+          "packageLocation": "./.yarn/unplugged/@prisma-engines-npm-4.4.0-1fbb4b28c3/node_modules/@prisma/engines/",\
+          "packageDependencies": [\
+            ["@prisma/engines", "npm:4.4.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -774,6 +784,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jsonwebtoken", "npm:8.5.1"],\
             ["nodemon", "npm:2.0.20"],\
             ["prettier", "npm:2.7.1"],\
+            ["prisma", "npm:4.4.0"],\
             ["ts-node", "virtual:142c23a86e7d1f8f21c16e78639c496707a0b5b621a5fb010d8b77b3d8f05f6a78570ba9485236bc07c64057189c2b6821352adf780ae137ddd2183db0ebf7bd#npm:10.9.1"],\
             ["ts-node-dev", "virtual:142c23a86e7d1f8f21c16e78639c496707a0b5b621a5fb010d8b77b3d8f05f6a78570ba9485236bc07c64057189c2b6821352adf780ae137ddd2183db0ebf7bd#npm:2.0.0"],\
             ["tsconfig-paths", "npm:4.1.0"],\
@@ -3700,6 +3711,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["prettier-linter-helpers", "npm:1.0.0"],\
             ["fast-diff", "npm:1.2.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["prisma", [\
+        ["npm:4.4.0", {\
+          "packageLocation": "./.yarn/unplugged/prisma-npm-4.4.0-261fc0ded0/node_modules/prisma/",\
+          "packageDependencies": [\
+            ["prisma", "npm:4.4.0"],\
+            ["@prisma/engines", "npm:4.4.0"]\
           ],\
           "linkType": "HARD"\
         }]\
