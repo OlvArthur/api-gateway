@@ -1057,6 +1057,7 @@ __metadata:
     tsconfig-paths: ^4.1.0
     typescript: ^4.8.3
     vitest: ^0.31.4
+    vitest-mock-extended: ^1.1.3
   languageName: unknown
   linkType: soft
 
@@ -4869,6 +4870,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ts-essentials@npm:^9.3.1":
+  version: 9.3.2
+  resolution: "ts-essentials@npm:9.3.2"
+  peerDependencies:
+    typescript: ">=4.1.0"
+  checksum: 88726b3f9bdc8f59f9a998bb925c989268d7e2f24d29ac13545e457d3ac8ee5472c78990eaa415b4c58244d55b989985a999345d6845055f5a58bb0f098c6f44
+  languageName: node
+  linkType: hard
+
 "ts-node-dev@npm:^2.0.0":
   version: 2.0.0
   resolution: "ts-node-dev@npm:2.0.0"
@@ -5199,6 +5209,18 @@ __metadata:
   bin:
     vite: bin/vite.js
   checksum: 8c45a516278d1e0425fac00c0877336790f71484a851a318346a70e0d2aef9f3b9651deb2f9f002c791ceb920eda7d6a3cda753bdefd657321c99f448b02dd25
+  languageName: node
+  linkType: hard
+
+"vitest-mock-extended@npm:^1.1.3":
+  version: 1.1.3
+  resolution: "vitest-mock-extended@npm:1.1.3"
+  dependencies:
+    ts-essentials: ^9.3.1
+  peerDependencies:
+    typescript: 3.x || 4.x || 5.x
+    vitest: ">=0.29.2"
+  checksum: d457dc1dcbf6b0570e9845dff7423c2b88504ce6bb189e71c0984b09b4d6c5894d883706a7639262c92e12b0b4b0d5db747e1d0b93e253b4d6c189cba15c70f9
   languageName: node
   linkType: hard
 

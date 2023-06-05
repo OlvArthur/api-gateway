@@ -2,7 +2,7 @@ import { IUser } from "@modules/users/entities/User"
 import { IFindOneUserRepository } from "@modules/users/repositories/IFindOneUserRepository"
 import { Context, prisma as prismaClient } from "@shared/infra/prisma/ClientInstance"
 
-class UsersRepository implements IFindOneUserRepository {
+export class UsersRepository implements IFindOneUserRepository {
   prismaContext: Context
 
   constructor(ctx?: Context) {
@@ -22,4 +22,3 @@ class UsersRepository implements IFindOneUserRepository {
   }
 }
 
-export default UsersRepository

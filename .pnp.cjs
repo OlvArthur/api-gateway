@@ -56,7 +56,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["ts-node-dev", "virtual:142c23a86e7d1f8f21c16e78639c496707a0b5b621a5fb010d8b77b3d8f05f6a78570ba9485236bc07c64057189c2b6821352adf780ae137ddd2183db0ebf7bd#npm:2.0.0"],\
             ["tsconfig-paths", "npm:4.1.0"],\
             ["typescript", "patch:typescript@npm%3A4.8.4#~builtin<compat/typescript>::version=4.8.4&hash=701156"],\
-            ["vitest", "virtual:142c23a86e7d1f8f21c16e78639c496707a0b5b621a5fb010d8b77b3d8f05f6a78570ba9485236bc07c64057189c2b6821352adf780ae137ddd2183db0ebf7bd#npm:0.31.4"]\
+            ["vitest", "virtual:142c23a86e7d1f8f21c16e78639c496707a0b5b621a5fb010d8b77b3d8f05f6a78570ba9485236bc07c64057189c2b6821352adf780ae137ddd2183db0ebf7bd#npm:0.31.4"],\
+            ["vitest-mock-extended", "virtual:142c23a86e7d1f8f21c16e78639c496707a0b5b621a5fb010d8b77b3d8f05f6a78570ba9485236bc07c64057189c2b6821352adf780ae137ddd2183db0ebf7bd#npm:1.1.3"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -1376,7 +1377,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["ts-node-dev", "virtual:142c23a86e7d1f8f21c16e78639c496707a0b5b621a5fb010d8b77b3d8f05f6a78570ba9485236bc07c64057189c2b6821352adf780ae137ddd2183db0ebf7bd#npm:2.0.0"],\
             ["tsconfig-paths", "npm:4.1.0"],\
             ["typescript", "patch:typescript@npm%3A4.8.4#~builtin<compat/typescript>::version=4.8.4&hash=701156"],\
-            ["vitest", "virtual:142c23a86e7d1f8f21c16e78639c496707a0b5b621a5fb010d8b77b3d8f05f6a78570ba9485236bc07c64057189c2b6821352adf780ae137ddd2183db0ebf7bd#npm:0.31.4"]\
+            ["vitest", "virtual:142c23a86e7d1f8f21c16e78639c496707a0b5b621a5fb010d8b77b3d8f05f6a78570ba9485236bc07c64057189c2b6821352adf780ae137ddd2183db0ebf7bd#npm:0.31.4"],\
+            ["vitest-mock-extended", "virtual:142c23a86e7d1f8f21c16e78639c496707a0b5b621a5fb010d8b77b3d8f05f6a78570ba9485236bc07c64057189c2b6821352adf780ae137ddd2183db0ebf7bd#npm:1.1.3"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -5788,6 +5790,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["ts-essentials", [\
+        ["npm:9.3.2", {\
+          "packageLocation": "./.yarn/cache/ts-essentials-npm-9.3.2-17512d8aa7-88726b3f9b.zip/node_modules/ts-essentials/",\
+          "packageDependencies": [\
+            ["ts-essentials", "npm:9.3.2"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:f04705ace009a0592466d9ccfef2a40e2024c4805b27879db9ebed3407d54d9ce4c623ffff4ac7f1370559f2f6966c9ca3cff4111fbcaeb7fe0488b813f8b217#npm:9.3.2", {\
+          "packageLocation": "./.yarn/__virtual__/ts-essentials-virtual-6bb1587bd4/0/cache/ts-essentials-npm-9.3.2-17512d8aa7-88726b3f9b.zip/node_modules/ts-essentials/",\
+          "packageDependencies": [\
+            ["ts-essentials", "virtual:f04705ace009a0592466d9ccfef2a40e2024c4805b27879db9ebed3407d54d9ce4c623ffff4ac7f1370559f2f6966c9ca3cff4111fbcaeb7fe0488b813f8b217#npm:9.3.2"],\
+            ["@types/typescript", null],\
+            ["typescript", "patch:typescript@npm%3A4.8.4#~builtin<compat/typescript>::version=4.8.4&hash=701156"]\
+          ],\
+          "packagePeers": [\
+            "@types/typescript",\
+            "typescript"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["ts-node", [\
         ["npm:10.9.1", {\
           "packageLocation": "./.yarn/cache/ts-node-npm-10.9.1-6c268be7f4-090adff130.zip/node_modules/ts-node/",\
@@ -6331,6 +6355,33 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             "playwright",\
             "safaridriver",\
             "webdriverio"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["vitest-mock-extended", [\
+        ["npm:1.1.3", {\
+          "packageLocation": "./.yarn/cache/vitest-mock-extended-npm-1.1.3-f9d232c541-d457dc1dcb.zip/node_modules/vitest-mock-extended/",\
+          "packageDependencies": [\
+            ["vitest-mock-extended", "npm:1.1.3"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:142c23a86e7d1f8f21c16e78639c496707a0b5b621a5fb010d8b77b3d8f05f6a78570ba9485236bc07c64057189c2b6821352adf780ae137ddd2183db0ebf7bd#npm:1.1.3", {\
+          "packageLocation": "./.yarn/__virtual__/vitest-mock-extended-virtual-f04705ace0/0/cache/vitest-mock-extended-npm-1.1.3-f9d232c541-d457dc1dcb.zip/node_modules/vitest-mock-extended/",\
+          "packageDependencies": [\
+            ["vitest-mock-extended", "virtual:142c23a86e7d1f8f21c16e78639c496707a0b5b621a5fb010d8b77b3d8f05f6a78570ba9485236bc07c64057189c2b6821352adf780ae137ddd2183db0ebf7bd#npm:1.1.3"],\
+            ["@types/typescript", null],\
+            ["@types/vitest", null],\
+            ["ts-essentials", "virtual:f04705ace009a0592466d9ccfef2a40e2024c4805b27879db9ebed3407d54d9ce4c623ffff4ac7f1370559f2f6966c9ca3cff4111fbcaeb7fe0488b813f8b217#npm:9.3.2"],\
+            ["typescript", "patch:typescript@npm%3A4.8.4#~builtin<compat/typescript>::version=4.8.4&hash=701156"],\
+            ["vitest", "virtual:142c23a86e7d1f8f21c16e78639c496707a0b5b621a5fb010d8b77b3d8f05f6a78570ba9485236bc07c64057189c2b6821352adf780ae137ddd2183db0ebf7bd#npm:0.31.4"]\
+          ],\
+          "packagePeers": [\
+            "@types/typescript",\
+            "@types/vitest",\
+            "typescript",\
+            "vitest"\
           ],\
           "linkType": "HARD"\
         }]\
