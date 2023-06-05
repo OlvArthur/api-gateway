@@ -7,7 +7,7 @@ import { AppError } from "@shared/errors/AppError"
 
 
 
-class AuthenticateUserService implements IAuthenticateUserService {
+export class AuthenticateUserService implements IAuthenticateUserService {
   constructor(private usersRepository: IFindOneUserRepository, private authTokenProvider: ITokenProvider) {}
 
   public async execute({ email, password }: IRequestDTO) {
