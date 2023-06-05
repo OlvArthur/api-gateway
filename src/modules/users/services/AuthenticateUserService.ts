@@ -11,6 +11,9 @@ class AuthenticateUserService implements IAuthenticateUserService {
   constructor(private usersRepository: IFindOneUserRepository, private authTokenProvider: ITokenProvider) {}
 
   public async execute({ email, password }: IRequestDTO) {
+    if(!email) throw new AppError('Login Failed: No email informed')
+    if(!password) throw new AppError('Login Failed: No password informed')
+
     const user = await this.usersRepository.findByEmail(email)
 
     if(!user) throw new AppError('Login Failed: invalid username or password')

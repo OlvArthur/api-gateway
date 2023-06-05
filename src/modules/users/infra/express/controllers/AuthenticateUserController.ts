@@ -7,9 +7,9 @@ class AuthenticateUserController implements BaseController {
   constructor(private authenticateUserService: IAuthenticateUserService){}
 
   async handle(httpRequest: HttpRequest) {
-    const { email } = httpRequest.body
+    const { email, password } = httpRequest.body
 
-    const { token, user } = await this.authenticateUserService.execute(email)
+    const { token, user } = await this.authenticateUserService.execute({ email, password })
 
     return success({ token,user })
   }

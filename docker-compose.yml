@@ -16,6 +16,8 @@ services:
     image: node:lts-bullseye-slim
     depends_on:
       - database
+    environment:
+      - DATABASE_URL=postgresql://gateway:gateway@database:5432/gateway_db
     command: yarn start
     ports:
       - 5000:5000

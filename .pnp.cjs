@@ -47,6 +47,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-react", "virtual:142c23a86e7d1f8f21c16e78639c496707a0b5b621a5fb010d8b77b3d8f05f6a78570ba9485236bc07c64057189c2b6821352adf780ae137ddd2183db0ebf7bd#npm:7.31.9"],\
             ["eslint-plugin-react-hooks", "virtual:142c23a86e7d1f8f21c16e78639c496707a0b5b621a5fb010d8b77b3d8f05f6a78570ba9485236bc07c64057189c2b6821352adf780ae137ddd2183db0ebf7bd#npm:4.6.0"],\
             ["express", "npm:4.18.2"],\
+            ["express-async-errors", "virtual:142c23a86e7d1f8f21c16e78639c496707a0b5b621a5fb010d8b77b3d8f05f6a78570ba9485236bc07c64057189c2b6821352adf780ae137ddd2183db0ebf7bd#npm:3.1.1"],\
             ["jsonwebtoken", "npm:8.5.1"],\
             ["nodemon", "npm:2.0.20"],\
             ["prettier", "npm:2.7.1"],\
@@ -1068,6 +1069,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-react", "virtual:142c23a86e7d1f8f21c16e78639c496707a0b5b621a5fb010d8b77b3d8f05f6a78570ba9485236bc07c64057189c2b6821352adf780ae137ddd2183db0ebf7bd#npm:7.31.9"],\
             ["eslint-plugin-react-hooks", "virtual:142c23a86e7d1f8f21c16e78639c496707a0b5b621a5fb010d8b77b3d8f05f6a78570ba9485236bc07c64057189c2b6821352adf780ae137ddd2183db0ebf7bd#npm:4.6.0"],\
             ["express", "npm:4.18.2"],\
+            ["express-async-errors", "virtual:142c23a86e7d1f8f21c16e78639c496707a0b5b621a5fb010d8b77b3d8f05f6a78570ba9485236bc07c64057189c2b6821352adf780ae137ddd2183db0ebf7bd#npm:3.1.1"],\
             ["jsonwebtoken", "npm:8.5.1"],\
             ["nodemon", "npm:2.0.20"],\
             ["prettier", "npm:2.7.1"],\
@@ -2517,6 +2519,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["type-is", "npm:1.6.18"],\
             ["utils-merge", "npm:1.0.1"],\
             ["vary", "npm:1.1.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["express-async-errors", [\
+        ["npm:3.1.1", {\
+          "packageLocation": "./.yarn/cache/express-async-errors-npm-3.1.1-c0a6b1e552-3a2a6df8ea.zip/node_modules/express-async-errors/",\
+          "packageDependencies": [\
+            ["express-async-errors", "npm:3.1.1"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:142c23a86e7d1f8f21c16e78639c496707a0b5b621a5fb010d8b77b3d8f05f6a78570ba9485236bc07c64057189c2b6821352adf780ae137ddd2183db0ebf7bd#npm:3.1.1", {\
+          "packageLocation": "./.yarn/__virtual__/express-async-errors-virtual-9fc5ed86d5/0/cache/express-async-errors-npm-3.1.1-c0a6b1e552-3a2a6df8ea.zip/node_modules/express-async-errors/",\
+          "packageDependencies": [\
+            ["express-async-errors", "virtual:142c23a86e7d1f8f21c16e78639c496707a0b5b621a5fb010d8b77b3d8f05f6a78570ba9485236bc07c64057189c2b6821352adf780ae137ddd2183db0ebf7bd#npm:3.1.1"],\
+            ["@types/express", "npm:4.17.14"],\
+            ["express", "npm:4.18.2"]\
+          ],\
+          "packagePeers": [\
+            "@types/express",\
+            "express"\
           ],\
           "linkType": "HARD"\
         }]\
