@@ -1,14 +1,22 @@
-import { IFindOneUserRepository, IUser } from "@modules/users/repositories/IFindOneUserRepository"
+import { IUser } from "@modules/users/entities/User"
+import { IFindOneUserRepository } from "@modules/users/repositories/IFindOneUserRepository"
+import { Context, prisma as prismaClient } from "@shared/infra/prisma/ClientInstance"
 
 class UsersRepository implements IFindOneUserRepository {
-  private users: IUser[] = [{
-    id: 1,
-    email:'arthur.oliveira@gateway.br',
-    password: '12345'
-  }]
+  prismaContext: Context
 
-  public async findByEmail(email: string): Promise<IUser | undefined> {
-    const foundUser = this.users.find(user => user.email === email)
+  constructor(ctx?: Context) {
+    this.prismaContext = ctx ?? { prisma: prismaClient }
+  }
+
+  public async findByEmail(email: string): Promise<IUser | null> {
+    const { prisma } = this.prismaContext
+
+    const foundUser = prisma.user.findUnique({
+      where: {
+        email
+      }
+    })
 
     return foundUser
   }

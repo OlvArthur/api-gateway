@@ -1,6 +1,11 @@
-import { IUser } from "@modules/users/repositories/IFindOneUserRepository";
+import { IUser } from "@modules/users/entities/User";
 
+
+export interface IRequestDTO {
+  email: string
+  password: string
+}
 
 export interface IAuthenticateUserService {
-  execute(email: string): Promise<{ user: IUser, token: string }>
+  execute(data: IRequestDTO): Promise<{ user: IUser, token: string }>
 }

@@ -1,9 +1,5 @@
-export interface IUser {
-  id: number
-  email: string
-  password: string
-}
+import { IUser } from "@modules/users/entities/User"
 
 export interface IFindOneUserRepository {
-  findByEmail(email: string): Promise<IUser | undefined>
+  findByEmail(email: string): Promise<IUser | null>
 }
