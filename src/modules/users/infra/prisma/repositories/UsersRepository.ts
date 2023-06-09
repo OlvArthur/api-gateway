@@ -1,24 +1,40 @@
 import { IUser } from "@modules/users/entities/User"
-import { IFindOneUserRepository } from "@modules/users/repositories/IFindOneUserRepository"
+import { IFindOneUserRepository, ICreateUserRepository, IRequestDTO } from "@modules/users/repositories"
+import { User } from "@shared/infra/prisma/client"
 import { Context, prisma as prismaClient } from "@shared/infra/prisma/ClientInstance"
 
-export class UsersRepository implements IFindOneUserRepository {
+export class UsersRepository implements IFindOneUserRepository, ICreateUserRepository {
   prismaContext: Context
 
   constructor(ctx?: Context) {
     this.prismaContext = ctx ?? { prisma: prismaClient }
   }
 
-  public async findByEmail(email: string): Promise<IUser | null> {
+  async findByEmail(email: string): Promise<IUser | null> {
     const { prisma } = this.prismaContext
 
-    const foundUser = prisma.user.findUnique({
+    const foundUser = await prisma.user.findUnique({
       where: {
         email
       }
     })
 
     return foundUser
+  }
+
+  async create(data: IRequestDTO): Promise<User> {
+    const { prisma } = this.prismaContext
+    const { email, name, password } = data
+
+    const createdUser = await prisma.user.create({
+      data: {
+        email,
+        name,
+        password
+      }
+    })
+
+    return createdUser
   }
 }
 

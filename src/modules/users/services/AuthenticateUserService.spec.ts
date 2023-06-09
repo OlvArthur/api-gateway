@@ -3,22 +3,23 @@ import { describe, beforeEach, it, expect } from 'vitest'
 import { AppError } from '@shared/errors/AppError'
 
 import { AuthenticateUserService } from '@modules/users/services/AuthenticateUserService'
-import { IFindOneUserRepository } from '@modules/users/repositories/IFindOneUserRepository'
 import { FakeUsersRepository } from '@modules/users/repositories/fakes/FakeUsersRepository'
 import { FakeTokenProvider } from '@modules/users/providers/AuthTokenProvider/fakes/FakeTokenProvider'
-import { ITokenProvider } from '@modules/users/providers/AuthTokenProvider/models/ITokenProvider'
+import { FakeHashProvider } from '@modules/users/providers/HashProvider/fakes/FakeHashProvider'
 
 
-describe('When a user is authenticating', () => {
-  let fakeUsersRepository: IFindOneUserRepository
-  let fakeTokenProvider: ITokenProvider
+describe('When an user is authenticating', () => {
+  let fakeUsersRepository: FakeUsersRepository
+  let fakeTokenProvider: FakeTokenProvider
+  let fakeHashProvider: FakeHashProvider
   let sut: AuthenticateUserService
 
   beforeEach(() => {
     fakeTokenProvider = new FakeTokenProvider()
     fakeUsersRepository = new FakeUsersRepository()
+    fakeHashProvider = new FakeHashProvider()
 
-    sut = new AuthenticateUserService(fakeUsersRepository,fakeTokenProvider)
+    sut = new AuthenticateUserService(fakeUsersRepository,fakeTokenProvider, fakeHashProvider)
   });
 
   it('should throw error if email is not provided', async () => {
@@ -68,9 +69,15 @@ describe('When a user is authenticating', () => {
   })
 
   it('should be able to authenticate', async () => {
-    const userToAuthenticate = {
+    const createdUser = await fakeUsersRepository.create({
       email: 'jhon.doe@test.com',
       password: 'testPassword',
+      name: 'Jhon Doe'
+    })
+
+    const userToAuthenticate = {
+      email: createdUser.email,
+      password: createdUser.password
     }
 
     const { user } = await sut.execute(userToAuthenticate)

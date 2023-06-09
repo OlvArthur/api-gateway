@@ -4,11 +4,12 @@ import { ITokenProvider } from "@modules/users/providers/AuthTokenProvider/model
 import { IFindOneUserRepository } from "@modules/users/repositories/IFindOneUserRepository"
 import { IAuthenticateUserService, IRequestDTO } from "@modules/users/services/interfaces/IAuthenticateUserService"
 import { AppError } from "@shared/errors/AppError"
+import { IHashProvider } from '@modules/users/providers/HashProvider/models/IHashProvider'
 
 
 
 export class AuthenticateUserService implements IAuthenticateUserService {
-  constructor(private usersRepository: IFindOneUserRepository, private authTokenProvider: ITokenProvider) {}
+  constructor(private usersRepository: IFindOneUserRepository, private authTokenProvider: ITokenProvider, private hashProvider: IHashProvider) {}
 
   public async execute({ email, password }: IRequestDTO) {
     if(!email) throw new AppError('Login Failed: No email informed')
@@ -18,7 +19,7 @@ export class AuthenticateUserService implements IAuthenticateUserService {
 
     if(!user) throw new AppError('Login Failed: invalid username or password')
 
-    const checkPassword = await compare(password, user.password)
+    const checkPassword = await this.hashProvider.compareHash(user.password, password)
 
     if(!checkPassword) throw new AppError('Login Failed: Invalid username or password')
 
