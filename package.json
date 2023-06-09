@@ -3,13 +3,16 @@
   "packageManager": "yarn@3.2.4",
   "scripts": {
     "start": "nodemon --watch 'src/' --exec 'ts-node -r tsconfig-paths/register src/shared/infra/express/server.ts' -e ts",
-    "dev:server": "ts-node-dev -r tsconfig-paths/register --inspect --ignore-watch node_modules ./src/shared/infra/express/server.ts"
+    "dev:server": "ts-node-dev -r tsconfig-paths/register --inspect --ignore-watch node_modules ./src/shared/infra/express/server.ts",
+    "test:integration":"./scripts/run-integration.sh",
+    "test:unit": "vitest"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
     "@types/express": "^4.17.14",
     "@types/jsonwebtoken": "^8.5.9",
     "@types/node": "^18.8.4",
+    "@types/supertest": "^2.0.12",
     "@typescript-eslint/eslint-plugin": "latest",
     "@typescript-eslint/parser": "^5.38.0",
     "@yarnpkg/pnpify": "^4.0.0-rc.45",
@@ -25,6 +28,7 @@
     "nodemon": "^2.0.19",
     "prettier": "^2.7.1",
     "prisma": "4.15.0",
+    "supertest": "^6.3.3",
     "ts-node": "^10.9.1",
     "ts-node-dev": "^2.0.0",
     "tsconfig-paths": "^4.1.0",

@@ -7,5 +7,5 @@ import authMiddleware from '@modules/users/infra/express/middlewares/ValidateUse
 
 export const sessionRouter = Router()
 
-sessionRouter.post('/login', adaptExpressRouter(authenticateUserFactory()))
+sessionRouter.post('/', adaptExpressRouter(authenticateUserFactory()))
 sessionRouter.get('/', authMiddleware, (_, response) => response.json({ message: 'token valid' }))

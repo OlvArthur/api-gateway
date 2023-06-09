@@ -19,7 +19,7 @@ export class AuthenticateUserService implements IAuthenticateUserService {
 
     if(!user) throw new AppError('Login Failed: invalid username or password')
 
-    const checkPassword = await this.hashProvider.compareHash(user.password, password)
+    const checkPassword = await this.hashProvider.compareHash(password, user.password)
 
     if(!checkPassword) throw new AppError('Login Failed: Invalid username or password')
 

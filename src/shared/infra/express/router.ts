@@ -6,7 +6,7 @@ import { usersRouters } from '@modules/users/infra/express/routes/users.routes'
 const router = Router()
 
 router.use('/login', sessionRouter)
-router.use('/login', usersRouters)
+router.use('/users', usersRouters)
 
 router.get('/health-check', (_, response) => {
   return response.json({ message: 'Hello world' })
