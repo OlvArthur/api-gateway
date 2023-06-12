@@ -4,7 +4,7 @@
   "scripts": {
     "start": "nodemon --watch 'src/' --exec 'ts-node -r tsconfig-paths/register src/shared/infra/express/server.ts' -e ts",
     "dev:server": "ts-node-dev -r tsconfig-paths/register --inspect --ignore-watch node_modules ./src/shared/infra/express/server.ts",
-    "test:integration":"./scripts/run-integration.sh",
+    "test:integration": "./scripts/run-integration.sh",
     "test:unit": "vitest"
   },
   "devDependencies": {
