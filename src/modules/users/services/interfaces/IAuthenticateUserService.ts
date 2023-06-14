@@ -1,11 +1,11 @@
 import { UserEntity } from "@modules/users/entities/User";
 
 
-export interface IRequestDTO {
+export interface IAuthenticateUserRequestDTO {
   email: string
   password: string
 }
 
 export interface IAuthenticateUserService {
-  execute(data: IRequestDTO): Promise<{ user: UserEntity, token: string }>
+  execute(data: IAuthenticateUserRequestDTO): Promise<{ user: UserEntity, token: string }>
 }

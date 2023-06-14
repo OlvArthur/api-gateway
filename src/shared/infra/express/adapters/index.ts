@@ -1,10 +1,11 @@
 
-import { BaseController } from '@shared/controller'
-import type { HttpRequest } from '@shared/interfaces'
 import type { RequestHandler } from 'express'
 
+import { BaseController } from '@shared/controller'
+import type { HttpRequest } from '@shared/interfaces'
+
 export const adaptExpressRouter = (controller: BaseController): RequestHandler => {
-  return async (req, res, next) => {
+  return async (req, res, _) => {
     const request: HttpRequest = {
       body: req.body,
       headers: req.headers,

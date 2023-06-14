@@ -7,13 +7,13 @@ import { createMockContext, MockContext } from '@shared/infra/prisma/__mocks__/C
 let mockContext: MockContext
 let sut: UsersRepository
 
-describe('When a user is searched', () => {
-  beforeEach(() => {
-    mockContext = createMockContext()
+beforeEach(() => {
+  mockContext = createMockContext()
 
-    sut = new UsersRepository(mockContext)
-  })
+  sut = new UsersRepository(mockContext)
+})
 
+describe('When an user is searched', () => {
   it('should be allowed search by email', async () => {
     const userEmail = 'jhon.doe@test.com'
 
@@ -31,12 +31,6 @@ describe('When a user is searched', () => {
 })
 
 describe('When an user is created', () => {
-  beforeEach(() => {
-    mockContext = createMockContext()
-
-    sut = new UsersRepository(mockContext)
-  })
-
   it('should return a create whith provided info', async () => {
     const userToCreate = {
       name: 'Jhon Doe',
@@ -63,4 +57,65 @@ describe('When an user is created', () => {
       })
     )
   })
+})
+
+describe('When multiple users are searched', () => {
+  it('should not apply ids filter when no ids are provided',async () => {
+    await sut.findMany()
+
+    mockContext.prisma.user.findMany.mockResolvedValue([
+      {
+        id: 1,
+        email: 'jhondoe@test.com',
+        name: 'Jhon Doe',
+        password: 'testPassword'
+      },
+      {
+        id: 2,
+        email: 'janedoe@test.com',
+        name: 'Jane Doe',
+        password: 'testPassword'
+      }
+    ])
+
+    expect(mockContext.prisma.user.findMany).toHaveBeenNthCalledWith(1,
+      expect.objectContaining({
+        where: {
+          id: {
+            in: undefined
+          }
+        }
+      })
+    )
+  })
+
+  it('should apply ids filter when ids are provided',async () => {
+    await sut.findMany([1,3])
+
+    mockContext.prisma.user.findMany.mockResolvedValue([
+      {
+        id: 1,
+        email: 'jhondoe@test.com',
+        name: 'Jhon Doe',
+        password: 'testPassword'
+      },
+      {
+        id: 2,
+        email: 'janedoe@test.com',
+        name: 'Jane Doe',
+        password: 'testPassword'
+      }
+    ])
+
+    expect(mockContext.prisma.user.findMany).toHaveBeenNthCalledWith(1,
+      expect.objectContaining({
+        where: {
+          id: {
+            in: [1,3]
+          }
+        }
+      })
+    )
+  })
+
 })

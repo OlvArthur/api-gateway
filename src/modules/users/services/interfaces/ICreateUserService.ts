@@ -1,11 +1,6 @@
 import { UserEntity } from "@modules/users/entities/User"
-
-export interface IRequestDTO {
-  email: string
-  password: string
-  name: string
-}
+import { ICreateUserRequestDTO } from "@modules/users/repositories"
 
 export interface ICreateUserService {
-  execute(data: IRequestDTO): Promise<UserEntity>
+  execute(data: ICreateUserRequestDTO): Promise<UserEntity>
 }

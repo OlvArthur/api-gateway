@@ -32,10 +32,15 @@ app.use((err: Error, _: Request, response: Response, __: NextFunction) => {
   }
 
   if(err instanceof CelebrateError) {
+    const errBodyDetails = err.details.get('body')?.details || []
+    const errQueryDetails = err.details.get('query')?.details || []
+
+    const errDetails = errBodyDetails.concat(errQueryDetails)
+
     return response.status(StatusCode.BAD_REQUEST).json({
       status,
       message,
-      details: err.details.get('body')?.details.map(({ message, context }) => ({
+      details: errDetails.map(({ message, context }) => ({
         message,
         value: context?.value
       }))

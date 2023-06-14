@@ -1,6 +1,6 @@
 import { ITokenProvider } from "@modules/users/providers/AuthTokenProvider/models/ITokenProvider"
 import { IFindOneUserRepository } from "@modules/users/repositories/IFindOneUserRepository"
-import { IAuthenticateUserService, IRequestDTO } from "@modules/users/services/interfaces/IAuthenticateUserService"
+import { IAuthenticateUserService, IAuthenticateUserRequestDTO } from "@modules/users/services/interfaces/IAuthenticateUserService"
 import { AppError } from "@shared/errors"
 import { IHashProvider } from '@modules/users/providers/HashProvider/models/IHashProvider'
 
@@ -9,7 +9,7 @@ import { IHashProvider } from '@modules/users/providers/HashProvider/models/IHas
 export class AuthenticateUserService implements IAuthenticateUserService {
   constructor(private usersRepository: IFindOneUserRepository, private authTokenProvider: ITokenProvider, private hashProvider: IHashProvider) {}
 
-  public async execute({ email, password }: IRequestDTO) {
+  public async execute({ email, password }: IAuthenticateUserRequestDTO) {
     if(!email) throw new AppError('Login Failed: No email informed')
     if(!password) throw new AppError('Login Failed: No password informed')
 
