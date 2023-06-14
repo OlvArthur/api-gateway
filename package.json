@@ -1,6 +1,6 @@
 {
   "name": "api-gateway",
-  "packageManager": "yarn@3.2.4",
+  "packageManager": "yarn@3.6.0",
   "scripts": {
     "start": "nodemon --watch 'src/' --exec 'ts-node -r tsconfig-paths/register src/shared/infra/express/server.ts' -e ts",
     "dev:server": "ts-node-dev -r tsconfig-paths/register --inspect --ignore-watch node_modules ./src/shared/infra/express/server.ts",
@@ -40,9 +40,11 @@
     "@prisma/client": "4.15.0",
     "bcryptjs": "^2.4.3",
     "celebrate": "^15.0.1",
-    "express": "^4.18.1",
+    "class-transformer": "^0.5.1",
+    "express": "^4.18.2",
     "express-async-errors": "^3.1.1",
-    "jsonwebtoken": "^8.5.1"
+    "jsonwebtoken": "^8.5.1",
+    "reflect-metadata": "^0.1.13"
   },
   "prisma": {
     "schema": "src/shared/infra/prisma/schema.prisma"
