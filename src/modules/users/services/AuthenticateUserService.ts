@@ -1,9 +1,7 @@
-import { compare } from 'bcryptjs'
-
 import { ITokenProvider } from "@modules/users/providers/AuthTokenProvider/models/ITokenProvider"
 import { IFindOneUserRepository } from "@modules/users/repositories/IFindOneUserRepository"
 import { IAuthenticateUserService, IRequestDTO } from "@modules/users/services/interfaces/IAuthenticateUserService"
-import { AppError } from "@shared/errors/AppError"
+import { AppError } from "@shared/errors"
 import { IHashProvider } from '@modules/users/providers/HashProvider/models/IHashProvider'
 
 

@@ -1,6 +1,6 @@
 import { describe, beforeEach, it, expect } from 'vitest'
 
-import { AppError } from '@shared/errors/AppError'
+import { AppError } from '@shared/errors'
 
 import { AuthenticateUserService } from '@modules/users/services/AuthenticateUserService'
 import { FakeUsersRepository } from '@modules/users/repositories/fakes/FakeUsersRepository'

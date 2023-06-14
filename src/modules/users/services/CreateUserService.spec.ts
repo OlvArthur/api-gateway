@@ -3,7 +3,7 @@ import { beforeEach, describe, it, expect } from 'vitest'
 import { ICreateUserRepository, IFindOneUserRepository } from '@modules/users/repositories'
 import { CreateUserService } from '@modules/users/services/CreateUserService'
 import { FakeUsersRepository } from '@modules/users/repositories/fakes/FakeUsersRepository'
-import { AppError } from '@shared/errors/AppError'
+import { AppError } from '@shared/errors'
 import { IHashProvider } from '@modules/users/providers/HashProvider/models/IHashProvider'
 import { FakeHashProvider } from '@modules/users/providers/HashProvider/fakes/FakeHashProvider'
 

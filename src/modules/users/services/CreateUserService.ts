@@ -1,7 +1,7 @@
 import { ICreateUserService, IRequestDTO } from '@modules/users/services/interfaces/ICreateUserService'
 import { IUser } from '@modules/users/entities/User'
 import { ICreateUserRepository, IFindOneUserRepository } from '@modules/users/repositories'
-import { AppError } from '@shared/errors/AppError'
+import { AppError } from '@shared/errors'
 import { IHashProvider } from '@modules/users/providers/HashProvider/models/IHashProvider'
 
 export class CreateUserService implements ICreateUserService {

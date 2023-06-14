@@ -1,9 +1,12 @@
 import 'express-async-errors'
 import express, { Request, Response, NextFunction } from 'express'
 
-import { AppError } from '@shared/errors/AppError'
+import { AppError } from '@shared/errors'
 
 import router from '@shared/infra/express/router'
+import { StatusCode } from '@shared/commons'
+import { CelebrateError } from 'celebrate'
+
 
 export const app = express()
 
@@ -16,20 +19,33 @@ app.use(router)
 
 app.use((err: Error, _: Request, response: Response, __: NextFunction) => {
   console.log(err)
+  const status = 'error'
+  const message = err.message ?? 'Internal server error'
 
   if (err instanceof AppError) {
     return response.status(err.statusCode).json({
-      status: 'error',
-      message: err.message,
+      status,
+      message,
       details: err.details
+    })
+  }
+
+  if(err instanceof CelebrateError) {
+    return response.status(StatusCode.BAD_REQUEST).json({
+      status,
+      message,
+      details: err.details.get('body')?.details.map(({ message, context }) => ({
+        message,
+        value: context?.value
+      }))
     })
   }
 
   console.error(err);
 
-  return response.status(500).json({
-    status: 'error',
-    message: 'Internal server error',
+  return response.status(StatusCode.INTERNAL_SERVER_ERROR).json({
+    status,
+    message,
   });
 });
 

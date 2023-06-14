@@ -1,6 +1,5 @@
 import { IUser } from "@modules/users/entities/User"
 import { IFindOneUserRepository, ICreateUserRepository, IRequestDTO } from "@modules/users/repositories"
-import { User } from "@shared/infra/prisma/client"
 import { Context, prisma as prismaClient } from "@shared/infra/prisma/ClientInstance"
 
 export class UsersRepository implements IFindOneUserRepository, ICreateUserRepository {
@@ -22,7 +21,7 @@ export class UsersRepository implements IFindOneUserRepository, ICreateUserRepos
     return foundUser
   }
 
-  async create(data: IRequestDTO): Promise<User> {
+  async create(data: IRequestDTO): Promise<IUser> {
     const { prisma } = this.prismaContext
     const { email, name, password } = data
 
