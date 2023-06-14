@@ -1,3 +1,6 @@
+import { plainToInstance } from 'class-transformer'
+
+import { UserEntity } from '@modules/users/entities/User'
 import { ICreateUserService } from '@modules/users/services/interfaces/ICreateUserService'
 import { created } from '@shared/commons'
 import { BaseController } from '@shared/controller'
@@ -15,6 +18,6 @@ export class CreateUserController implements BaseController {
       password
     })
 
-    return created(createdUser)
+    return created(plainToInstance(UserEntity, createdUser))
   }
 }

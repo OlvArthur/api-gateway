@@ -1,10 +1,10 @@
-import { IUser } from '@modules/users/entities/User'
+import { UserEntity } from '@modules/users/entities/User'
 import { IFindOneUserRepository, ICreateUserRepository } from '@modules/users/repositories'
 import { User } from '@shared/infra/prisma/client'
 import { IRequestDTO } from '../ICreateUserRepository'
 
 export class FakeUsersRepository implements IFindOneUserRepository, ICreateUserRepository {
-  private users: IUser[] = [
+  private users: UserEntity[] = [
     // {
     //   id: 1,
     //   name: 'Jhon Doe',
@@ -25,7 +25,7 @@ export class FakeUsersRepository implements IFindOneUserRepository, ICreateUserR
     // }
   ]
 
-  async findByEmail(email: string): Promise<IUser | null> {
+  async findByEmail(email: string): Promise<UserEntity | null> {
     const foundSeller = this.users.find(seller => seller.email === email)
 
     if(!foundSeller) return null
@@ -33,7 +33,7 @@ export class FakeUsersRepository implements IFindOneUserRepository, ICreateUserR
     return foundSeller
   }
 
-  async create({ email, name, password }: IRequestDTO): Promise<IUser> {
+  async create({ email, name, password }: IRequestDTO): Promise<UserEntity> {
     const userToCreate = {
       email,
       name,

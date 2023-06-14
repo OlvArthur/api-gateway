@@ -1,5 +1,5 @@
 import { ICreateUserService, IRequestDTO } from '@modules/users/services/interfaces/ICreateUserService'
-import { IUser } from '@modules/users/entities/User'
+import { UserEntity } from '@modules/users/entities/User'
 import { ICreateUserRepository, IFindOneUserRepository } from '@modules/users/repositories'
 import { AppError } from '@shared/errors'
 import { IHashProvider } from '@modules/users/providers/HashProvider/models/IHashProvider'
@@ -7,7 +7,7 @@ import { IHashProvider } from '@modules/users/providers/HashProvider/models/IHas
 export class CreateUserService implements ICreateUserService {
   constructor(private usersRepository: ICreateUserRepository & IFindOneUserRepository, private hashProvider: IHashProvider) {}
 
-  async execute({ email, name, password }: IRequestDTO): Promise<IUser> {
+  async execute({ email, name, password }: IRequestDTO): Promise<UserEntity> {
     if(!email) throw new AppError('Create User Error: Missing email')
     if(!name) throw new AppError('Create User Error: Missing name')
     if(!password) throw new AppError('Create User Error: Missing password')

@@ -1,5 +1,5 @@
-import { IUser } from "@modules/users/entities/User"
+import { UserEntity } from "@modules/users/entities/User"
 
 export interface IFindOneUserRepository {
-  findByEmail(email: string): Promise<IUser | null>
+  findByEmail(email: string): Promise<UserEntity | null>
 }

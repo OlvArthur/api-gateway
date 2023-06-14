@@ -1,4 +1,4 @@
-import { IUser } from "@modules/users/entities/User";
+import { UserEntity } from "@modules/users/entities/User";
 
 
 export interface IRequestDTO {
@@ -7,5 +7,5 @@ export interface IRequestDTO {
 }
 
 export interface IAuthenticateUserService {
-  execute(data: IRequestDTO): Promise<{ user: IUser, token: string }>
+  execute(data: IRequestDTO): Promise<{ user: UserEntity, token: string }>
 }
