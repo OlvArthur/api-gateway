@@ -1,11 +1,17 @@
+import { AppError } from '@shared/errors'
+import { ICacheProvider } from '@shared/providers/CacheProvider/models/ICacheProvider'
+
 import { ICreateUserService } from '@modules/users/services/interfaces/ICreateUserService'
 import { UserEntity } from '@modules/users/entities/User'
 import { ICreateUserRepository, ICreateUserRequestDTO, IFindOneUserRepository } from '@modules/users/repositories'
-import { AppError } from '@shared/errors'
 import { IHashProvider } from '@modules/users/providers/HashProvider/models/IHashProvider'
 
 export class CreateUserService implements ICreateUserService {
-  constructor(private usersRepository: ICreateUserRepository & IFindOneUserRepository, private hashProvider: IHashProvider) {}
+  constructor(
+    private usersRepository: ICreateUserRepository & IFindOneUserRepository,
+    private hashProvider: IHashProvider,
+    private cacheProvider: ICacheProvider
+  ) {}
 
   async execute({ email, name, password }: ICreateUserRequestDTO): Promise<UserEntity> {
     if(!email) throw new AppError('Create User Error: Missing email')
@@ -23,6 +29,8 @@ export class CreateUserService implements ICreateUserService {
       name,
       password: hashedPassword
     })
+
+    await this.cacheProvider.invalidateByPrefix('users-list')
 
     return createdUser
   }

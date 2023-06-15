@@ -1,6 +1,13 @@
 version: '3'
 
 services:
+  redis:
+    image: redis:alpine
+    ports:
+      - '6379:6379'
+    volumes:
+      - 'redis_cache_data:/redis'
+
   database:
       image: 'bitnami/postgresql'
       ports:
@@ -16,8 +23,11 @@ services:
     image: node:lts-bullseye-slim
     depends_on:
       - database
+      - redis
     environment:
       - DATABASE_URL=postgresql://gateway:gateway@database:5432/gateway_db
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
     command: yarn start
     ports:
       - 5000:5000
@@ -42,4 +52,7 @@ volumes:
     driver: local
 
   test_postgresql_data:
+    driver: local
+
+  redis_cache_data:
     driver: local
