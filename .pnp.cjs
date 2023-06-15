@@ -30,6 +30,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@prisma/client", "virtual:142c23a86e7d1f8f21c16e78639c496707a0b5b621a5fb010d8b77b3d8f05f6a78570ba9485236bc07c64057189c2b6821352adf780ae137ddd2183db0ebf7bd#npm:4.15.0"],\
             ["@types/bcryptjs", "npm:2.4.2"],\
+            ["@types/cors", "npm:2.8.13"],\
             ["@types/express", "npm:4.17.17"],\
             ["@types/jsonwebtoken", "npm:8.5.9"],\
             ["@types/node", "npm:18.16.18"],\
@@ -40,6 +41,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["bcryptjs", "npm:2.4.3"],\
             ["celebrate", "npm:15.0.1"],\
             ["class-transformer", "npm:0.5.1"],\
+            ["cors", "npm:2.8.5"],\
             ["eslint", "npm:8.42.0"],\
             ["eslint-config-airbnb", "virtual:142c23a86e7d1f8f21c16e78639c496707a0b5b621a5fb010d8b77b3d8f05f6a78570ba9485236bc07c64057189c2b6821352adf780ae137ddd2183db0ebf7bd#npm:19.0.4"],\
             ["eslint-config-airbnb-base", "virtual:142c23a86e7d1f8f21c16e78639c496707a0b5b621a5fb010d8b77b3d8f05f6a78570ba9485236bc07c64057189c2b6821352adf780ae137ddd2183db0ebf7bd#npm:15.0.0"],\
@@ -56,6 +58,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["nodemon", "npm:2.0.22"],\
             ["prettier", "npm:2.8.8"],\
             ["prisma", "npm:4.15.0"],\
+            ["rate-limiter-flexible", "npm:2.4.1"],\
             ["reflect-metadata", "npm:0.1.13"],\
             ["supertest", "npm:6.3.3"],\
             ["ts-node", "virtual:142c23a86e7d1f8f21c16e78639c496707a0b5b621a5fb010d8b77b3d8f05f6a78570ba9485236bc07c64057189c2b6821352adf780ae137ddd2183db0ebf7bd#npm:10.9.1"],\
@@ -716,6 +719,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-cookiejar-npm-2.1.2-2588120a7c-f6e1903454.zip/node_modules/@types/cookiejar/",\
           "packageDependencies": [\
             ["@types/cookiejar", "npm:2.1.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@types/cors", [\
+        ["npm:2.8.13", {\
+          "packageLocation": "./.yarn/cache/@types-cors-npm-2.8.13-4b8ac1068f-7ef197ea19.zip/node_modules/@types/cors/",\
+          "packageDependencies": [\
+            ["@types/cors", "npm:2.8.13"],\
+            ["@types/node", "npm:20.3.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -1507,6 +1520,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["api-gateway", "workspace:."],\
             ["@prisma/client", "virtual:142c23a86e7d1f8f21c16e78639c496707a0b5b621a5fb010d8b77b3d8f05f6a78570ba9485236bc07c64057189c2b6821352adf780ae137ddd2183db0ebf7bd#npm:4.15.0"],\
             ["@types/bcryptjs", "npm:2.4.2"],\
+            ["@types/cors", "npm:2.8.13"],\
             ["@types/express", "npm:4.17.17"],\
             ["@types/jsonwebtoken", "npm:8.5.9"],\
             ["@types/node", "npm:18.16.18"],\
@@ -1517,6 +1531,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["bcryptjs", "npm:2.4.3"],\
             ["celebrate", "npm:15.0.1"],\
             ["class-transformer", "npm:0.5.1"],\
+            ["cors", "npm:2.8.5"],\
             ["eslint", "npm:8.42.0"],\
             ["eslint-config-airbnb", "virtual:142c23a86e7d1f8f21c16e78639c496707a0b5b621a5fb010d8b77b3d8f05f6a78570ba9485236bc07c64057189c2b6821352adf780ae137ddd2183db0ebf7bd#npm:19.0.4"],\
             ["eslint-config-airbnb-base", "virtual:142c23a86e7d1f8f21c16e78639c496707a0b5b621a5fb010d8b77b3d8f05f6a78570ba9485236bc07c64057189c2b6821352adf780ae137ddd2183db0ebf7bd#npm:15.0.0"],\
@@ -1533,6 +1548,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["nodemon", "npm:2.0.22"],\
             ["prettier", "npm:2.8.8"],\
             ["prisma", "npm:4.15.0"],\
+            ["rate-limiter-flexible", "npm:2.4.1"],\
             ["reflect-metadata", "npm:0.1.13"],\
             ["supertest", "npm:6.3.3"],\
             ["ts-node", "virtual:142c23a86e7d1f8f21c16e78639c496707a0b5b621a5fb010d8b77b3d8f05f6a78570ba9485236bc07c64057189c2b6821352adf780ae137ddd2183db0ebf7bd#npm:10.9.1"],\
@@ -2228,6 +2244,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/cookiejar-npm-2.1.4-e418c49b9e-c444211196.zip/node_modules/cookiejar/",\
           "packageDependencies": [\
             ["cookiejar", "npm:2.1.4"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["cors", [\
+        ["npm:2.8.5", {\
+          "packageLocation": "./.yarn/cache/cors-npm-2.8.5-c9935a2d12-ced838404c.zip/node_modules/cors/",\
+          "packageDependencies": [\
+            ["cors", "npm:2.8.5"],\
+            ["object-assign", "npm:4.1.1"],\
+            ["vary", "npm:1.1.2"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -5546,6 +5573,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/range-parser-npm-1.2.1-1a470fa390-0a268d4fea.zip/node_modules/range-parser/",\
           "packageDependencies": [\
             ["range-parser", "npm:1.2.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["rate-limiter-flexible", [\
+        ["npm:2.4.1", {\
+          "packageLocation": "./.yarn/cache/rate-limiter-flexible-npm-2.4.1-33c7e9a4f7-5eea3ffbb6.zip/node_modules/rate-limiter-flexible/",\
+          "packageDependencies": [\
+            ["rate-limiter-flexible", "npm:2.4.1"]\
           ],\
           "linkType": "HARD"\
         }]\

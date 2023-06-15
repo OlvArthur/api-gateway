@@ -1,10 +1,12 @@
 import 'reflect-metadata'
 import 'express-async-errors'
 import express, { Request, Response, NextFunction } from 'express'
+import cors from 'cors'
 
 import { AppError } from '@shared/errors'
 
 import router from '@shared/infra/express/router'
+import { rateLimiterRedis } from '@shared/infra/express/middlewares/RateLimiterRedis'
 import { StatusCode } from '@shared/commons'
 import { CelebrateError } from 'celebrate'
 
@@ -13,10 +15,10 @@ export const app = express()
 
 const PORT = process.env.PORT ?? 5000
 
+app.use(cors())
 app.use(express.json())
-
+app.use(rateLimiterRedis)
 app.use(router)
-
 
 app.use((err: Error, _: Request, response: Response, __: NextFunction) => {
   console.log(err)
