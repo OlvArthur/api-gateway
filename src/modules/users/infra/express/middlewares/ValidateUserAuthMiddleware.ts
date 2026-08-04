@@ -23,7 +23,8 @@ const validatedUserAuth = (request: Request, response: Response, next: NextFunct
     const { sub } = decoded as ITokenPayload
 
     request.user = {
-      id: sub
+      id: (JSON.parse(sub) as any).id.toString(),
+      role: (JSON.parse(sub) as any).role
     }
 
     return next()

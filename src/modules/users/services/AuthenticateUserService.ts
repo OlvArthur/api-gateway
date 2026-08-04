@@ -21,7 +21,7 @@ export class AuthenticateUserService implements IAuthenticateUserService {
 
     if(!checkPassword) throw new AppError('Login Failed: Invalid username or password')
 
-    const token = this.authTokenProvider.generateToken(JSON.stringify(user.id))
+    const token = this.authTokenProvider.generateToken({id: user.id, role: user.role})
 
     return { user, token }
   }
