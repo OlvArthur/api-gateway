@@ -10,7 +10,7 @@ interface ITokenPayload {
   sub: string
 }
 
-const validatedUserAuth = (request: Request, response: Response, next: NextFunction) => {
+const validatedUserAuth = (request: Request, _: Response, next: NextFunction) => {
   const { authorization } = request.headers
 
   if(!authorization) throw new AppError('Missing JWT token', 401)

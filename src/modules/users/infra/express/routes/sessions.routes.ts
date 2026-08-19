@@ -18,4 +18,10 @@ sessionRouter.post(
   }),
   adaptExpressRouter(authenticateUserFactory())
 )
-sessionRouter.get('/', authMiddleware, (_, response) => response.json({ message: 'token valid' }))
+
+
+sessionRouter.get(
+  '/',
+  authMiddleware,
+  (_, response) => response.json({ message: 'token valid' })
+)

@@ -11,7 +11,7 @@ services:
   database:
       image: 'bitnami/postgresql'
       ports:
-        - '5432:5432'
+        - '5434:5432'
       environment:
         - POSTGRESQL_USERNAME=gateway
         - POSTGRESQL_PASSWORD=gateway
@@ -25,7 +25,7 @@ services:
       - database
       - redis
     environment:
-      - DATABASE_URL=postgresql://gateway:gateway@database:5432/gateway_db
+      - DATABASE_URL=postgresql://gateway:gateway@database:5434/gateway_db
       - REDIS_HOST=redis
       - REDIS_PORT=6379
     command: yarn start
